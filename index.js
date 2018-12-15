@@ -7,6 +7,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/', (req, res) => {
+  res.send('Try /deck/new/shuffle, or /deck/:deck_id/draw');
+});
+
 // make a request to the deck of cards api that the student can use to get around cors
 app.get('/deck/new/shuffle', (req, res) => {
   request({
