@@ -1,10 +1,7 @@
 # Deck of Cards API Wrapper
 
-The original API is found here: [https://github.com/crobertsbmw/deckofcards](https://github.com/crobertsbmw/deckofcards)
-
-The intention of this repo is to wrap requests from the deck of cards API in a
-CORS-disabled API. That way, requests to the original API can occur while in
-development, without passing the browser same origin security policy.
+This wrap requests from the [deck of cards API](https://github.com/crobertsbmw/deckofcards), to apply an open Access-Control-Allow-Origin header. That way, requests to the original API can occur while in
+development, without browser same-origin-policy issues.
 
 
 ## This API wrapper supports two requests:
