@@ -1,5 +1,6 @@
 const express = require('express');
 const request = require('request');
+const LimitingMiddleware = require('./limiting-middleware');
 
 const app = express();
 const limitingMiddleware = new LimitingMiddleware();
