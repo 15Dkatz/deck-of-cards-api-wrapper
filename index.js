@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 // make a request to the deck of cards api that the student can use to get around cors
 app.get('/deck/new/shuffle', (req, res) => {
   request({
-    url: 'https://deckofcardsapi.com/api/deck/new/shuffle'
+    url: 'https://deckofcardsapi.com/api/deck/new/shuffle/'
   }, (error, response, body) => {
     res.json(JSON.parse(body));
   });
