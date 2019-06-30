@@ -28,7 +28,7 @@ app.get('/deck/:deck_id/draw', (req, res) => {
   const { deck_id } = req.params;
 
   request({
-    url: `https://deckofcardsapi.com/api/deck/${deck_id}/draw`
+    url: `https://deckofcardsapi.com/api/deck/${deck_id}/draw/`
   }, (error, response, body) => {
     res.json(JSON.parse(body));
   });
