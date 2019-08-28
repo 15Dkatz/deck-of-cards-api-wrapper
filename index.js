@@ -21,7 +21,7 @@ app.get('/deck/new/shuffle', (req, res, next) => {
    * 7/3/19. The /shuffle endpoint is currently having issues in the base API.
    */
   request({
-    url: 'https://deckofcardsapi.com/api/deck/new/'
+    url: 'https://deckofcardsapi.com/api/deck/new/shuffle/'
   }, (error, response, body) => {
     if (body.substring(0, 1) === '{') {
         return res.json(JSON.parse(body));
@@ -35,7 +35,7 @@ app.get('/deck/:deck_id/draw', (req, res) => {
   const { deck_id } = req.params;
 
   request({
-    url: `https://deckofcardsapi.com/api/deck/${deck_id}/draw`
+    url: `https://deckofcardsapi.com/api/deck/${deck_id}/draw/`
   }, (error, response, body) => {
     res.json(JSON.parse(body));
   });
