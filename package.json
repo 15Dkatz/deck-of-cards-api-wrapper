@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "deploy": "git pull && gcloud app deploy"
+    "deploy": "gcloud config set project deck-of-cards-api-wrapper && gcloud app deploy"
   },
   "keywords": [],
   "author": "",

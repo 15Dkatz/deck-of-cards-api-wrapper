@@ -16,11 +16,18 @@ app.get('/', (req, res) => {
 });
 
 // make a request to the deck of cards api that the student can use to get around cors
-app.get('/deck/new/shuffle', (req, res) => {
+app.get('/deck/new/shuffle', (req, res, next) => {
+  /**
+   * 7/3/19. The /shuffle endpoint is currently having issues in the base API.
+   */
   request({
     url: 'https://deckofcardsapi.com/api/deck/new/shuffle/'
   }, (error, response, body) => {
-    res.json(JSON.parse(body));
+    if (body.substring(0, 1) === '{') {
+        return res.json(JSON.parse(body));
+    }
+
+    return next(new Error('https://deckofcardsapi.com/api/deck/new/ returns unexpected data'));
   });
 });
 
